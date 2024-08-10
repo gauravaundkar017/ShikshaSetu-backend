@@ -74,7 +74,7 @@ public class UserEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Subscriptions subscription = Subscriptions.INACTIVE; // Default value for subscription
+    private Subscription subscription = Subscription.INACTIVE; // Default value for subscription
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", updatable = false)

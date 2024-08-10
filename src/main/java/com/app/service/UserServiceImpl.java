@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.app.custom_exceptions.ApiException;
 import com.app.dto.Signup;
 import com.app.entities.Avatar;
-import com.app.entities.Subscriptions;
+import com.app.entities.Subscription;
 import com.app.entities.UserEntity;
 import com.app.entities.UserRole;
 import com.app.repository.UserRepository;
@@ -46,7 +46,7 @@ public class UserServiceImpl implements UserService {
 		UserEntity user = mapper.map(reqDTO, UserEntity.class);
 		user.setPassword(encoder.encode(user.getPassword()));
 		user.setRole(reqDTO.getRole() != null ? reqDTO.getRole() : UserRole.USER); // Ensure role is set
-	    user.setSubscription(reqDTO.getSubscription() != null ? reqDTO.getSubscription() : Subscriptions.INACTIVE); // Ensure subscription is set
+	    user.setSubscription(reqDTO.getSubscription() != null ? reqDTO.getSubscription() : Subscription.INACTIVE); // Ensure subscription is set
 	    
 	    if (file != null && !file.isEmpty()) {
             try {

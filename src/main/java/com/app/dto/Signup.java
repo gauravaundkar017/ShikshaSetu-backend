@@ -4,7 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 import com.app.entities.Avatar;
-import com.app.entities.Subscriptions;
+import com.app.entities.Subscription;
 import com.app.entities.UserRole;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
@@ -34,7 +34,7 @@ public class Signup {
     private UserRole role = UserRole.USER; // Default value
 
     @JsonProperty(access = Access.READ_ONLY)
-    private Subscriptions subscription = Subscriptions.INACTIVE; // Default value
+    private Subscription subscription = Subscription.INACTIVE; // Default value
 
     private Avatar avatar;
 
@@ -43,7 +43,7 @@ public class Signup {
         this.email = email;
         this.password = password;
         this.role = UserRole.USER;
-        this.subscription = Subscriptions.INACTIVE;
+        this.subscription = Subscription.INACTIVE;
         this.avatar = avatar;
     }
 }
