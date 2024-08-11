@@ -42,14 +42,14 @@ public class UserSignInSignupController {
 	@Autowired
 	private AuthenticationManager authMgr; 
 	
-    @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+//    @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 	@PostMapping("/register")
 	public ResponseEntity<?> userSignup(@RequestPart("dto") @Valid Signup dto,@RequestParam("file") MultipartFile file) throws IOException {
 		System.out.println("in sign up " + dto);
 		return ResponseEntity.status(HttpStatus.CREATED).body(userService.userRegistration(dto, file));
 	}
     
-    @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
+//    @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
 	@PostMapping("/login")
 	public ResponseEntity<?> authenticateUser(@RequestBody @Valid SignInRequest request){
 		UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword());
